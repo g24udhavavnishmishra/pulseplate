@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PulsePlate AI — Your daily nutrition starting point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <svg class="pulse-mark" viewBox="0 0 140 44" width="120" height="38" aria-hidden="true">
+      <polyline id="pulseLine" points="0,22 30,22 38,22 44,6 50,38 56,22 64,22 72,22 78,10 84,34 90,22 140,22"
+        fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div>
+      <h1>PulsePlate<span>AI</span></h1>
+      <p class="tagline">A personalized nutrition starting point, tuned to how you actually live.</p>
+    </div>
+  </div>
+  <div class="status-readout" id="statusReadout">READY</div>
+</header>
+
+<main class="layout">
+
+  <section class="panel form-panel" aria-labelledby="form-heading">
+    <h2 id="form-heading"><span class="eyebrow">Step 01 — Log your profile</span>Tell PulsePlate about you</h2>
+
+    <form id="profileForm">
+      <div class="field-row">
+        <div>
+          <label for="age">Age</label>
+          <input type="text" id="age" name="age" required placeholder="e.g. 29" />
+        </div>
+        <div>
+          <label for="bodyStats">Weight &amp; height</label>
+          <input type="text" id="bodyStats" name="bodyStats" required placeholder="e.g. 68 kg, 170 cm" />
+        </div>
+      </div>
+
+      <label for="activityLevel">Activity level</label>
+      <select id="activityLevel" name="activityLevel" required>
+        <option value="">Select one</option>
+        <option>Sedentary (desk job, little exercise)</option>
+        <option>Lightly active (1-2 workouts/week)</option>
+        <option>Moderately active (3-4 workouts/week)</option>
+        <option>Very active (5+ workouts/week)</option>
+        <option>Athlete / physically demanding job</option>
+      </select>
+
+      <label for="dietaryPreference">Dietary preference</label>
+      <select id="dietaryPreference" name="dietaryPreference" required>
+        <option value="">Select one</option>
+        <option>No restrictions</option>
+        <option>Vegetarian</option>
+        <option>Vegan</option>
+        <option>Pescatarian</option>
+        <option>Keto / low-carb</option>
+        <option>Halal</option>
+        <option>Kosher</option>
+        <option>Other (specify in notes)</option>
+      </select>
+
+      <label for="goal">Primary goal</label>
+      <select id="goal" name="goal" required>
+        <option value="">Select one</option>
+        <option>Lose weight gradually</option>
+        <option>Maintain current weight</option>
+        <option>Build muscle</option>
+        <option>Improve energy levels</option>
+        <option>Eat more consistently / build habits</option>
+        <option>General wellness</option>
+      </select>
+
+      <label for="restrictions">Allergies, intolerances, or medical notes <span class="hint">(always respected)</span></label>
+      <textarea id="restrictions" name="restrictions" rows="2" placeholder="e.g. peanut allergy, lactose intolerant, managing type 2 diabetes..."></textarea>
+
+      <label for="notes">Anything else? <span class="hint">(optional — meals/day, cuisines you love, budget...)</span></label>
+      <textarea id="notes" name="notes" rows="2" placeholder="e.g. prefer 3 meals + 1 snack, love Mediterranean food, cooking for one..."></textarea>
+
+      <button type="submit" id="submitBtn">
+        <span>Build my daily plan</span>
+      </button>
+    </form>
+  </section>
+
+  <section class="panel output-panel" aria-labelledby="output-heading">
+    <h2 id="output-heading"><span class="eyebrow">Step 02 — Your plan</span>Personalized nutrition starting point</h2>
+
+    <div id="output" class="output-body">
+      <p class="placeholder">Fill in your profile and build your plan — a personalized calorie/macro estimate, a sample day of meals, and habit tips will stream in here.</p>
+    </div>
+
+    <form id="followupForm" class="followup-form hidden">
+      <input type="text" id="followupInput" placeholder="Ask a follow-up — swap a meal, adjust a macro..." autocomplete="off" />
+      <button type="submit" aria-label="Send follow-up">&#8594;</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Built with Claude &middot; PulsePlate AI is a course project offering general educational guidance, not medical or dietetic advice. Speak with a registered dietitian or doctor before making significant changes.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
