@@ -16,10 +16,8 @@ without dairy") and it keeps the conversation in context.
 
 ## Live demo
 
-- **Frontend:** `http://pulseplate-react-udhav.s3-website.eu-north-1.amazonaws.com`
+- **Frontend:** [→ Open the live app](http://pulseplate-react-udhav.s3-website.eu-north-1.amazonaws.com)
 - **Backend API:** running on AWS EC2
-
-*(Update these links if you redeploy.)*
 
 ---
 
